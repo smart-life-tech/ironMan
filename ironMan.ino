@@ -29,6 +29,9 @@ void setup()
     faceServo1.write(0);
     faceServo2.write(180);
     lipServo.write(0);
+
+    Serial.begin(9600); // Initialize serial communication
+    Serial.println("Ironman Helmet Initialized");
 }
 
 void loop()
@@ -44,6 +47,7 @@ void loop()
         closeLip();
         digitalWrite(eyeLEDPin1, HIGH); // Turn on first eye LED
         digitalWrite(eyeLEDPin2, HIGH); // Turn on second eye LED
+        Serial.println("Helmet Face Closed");
     }
     else if (hallSensorValue == LOW && faceOpen)
     {
@@ -52,9 +56,10 @@ void loop()
         openLip();
         digitalWrite(eyeLEDPin1, LOW); // Turn off first eye LED
         digitalWrite(eyeLEDPin2, LOW); // Turn off second eye LED
+        Serial.println("Helmet Face Opened");
     }
 
-    // Other code or functionality can be added here if needed
+    delay(100); // Delay for stability
 }
 
 void openFace()
