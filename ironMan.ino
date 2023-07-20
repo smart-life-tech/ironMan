@@ -17,7 +17,7 @@ Servo lipServo;   // Lip servo object
 
 void setup()
 {
-    pinMode(hallSensorPin, INPUT); // Set Hall sensor pin as input
+    pinMode(hallSensorPin, INPUT_PULLUP); // Set Hall sensor pin as input
     pinMode(eyeLEDPin1, OUTPUT);   // Set first eye LED pin as output
     pinMode(eyeLEDPin2, OUTPUT);   // Set second eye LED pin as output
 
